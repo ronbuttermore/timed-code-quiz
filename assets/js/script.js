@@ -30,9 +30,15 @@ function endQuiz() {
     option2.innerHTML = "Enter initials: ";
     option3.innerHTML = "";
     option4.innerHTML = "";
+    startQuizBtn.innerHTML = "Try again";
 }
 
 function startQuiz() {
+    if (questionNumber == 0){  
+    option1.addEventListener("click", advanceQuestion);
+    option2.addEventListener("click", advanceQuestion);
+    option3.addEventListener("click", advanceQuestion);
+    option4.addEventListener("click", advanceQuestion);
     question.textContent = "Testing Question 1";
     option1.innerHTML = "Here's the first option for the first question.";
     option1.style.border = "solid black 2px";
@@ -42,9 +48,35 @@ function startQuiz() {
     option3.style.border = "solid black 2px";
     option4.innerHTML = "Here's the fourth option for the first question.";
     option4.style.border = "solid black 2px";
-    startQuiz.innerHTML = "Next Question";
+    startQuizBtn.innerHTML = "";
     questionNumber++;
     quizTimer();
+    } else {
+        option1.addEventListener("click", advanceQuestion);
+        option2.addEventListener("click", advanceQuestion);
+        option3.addEventListener("click", advanceQuestion);
+        option4.addEventListener("click", advanceQuestion);
+        option2.addEventListener("click", answerisB);
+        option3.addEventListener("click", answerisC);
+        option4.addEventListener("click", answerisD);
+        option1.addEventListener("click", answerisA);
+        timeLeft = 75;
+        userScore = 0;
+        question.textContent = "Testing Question 1";
+        option1.innerHTML = "Here's the first option for the first question.";
+        option1.style.border = "solid black 2px";
+        option2.innerHTML = "Here's the second option for the first question.";
+        option2.style.border = "solid black 2px";
+        option3.innerHTML = "Here's the third option for the first question.";
+        option3.style.border = "solid black 2px";
+        option4.innerHTML = "Here's the fourth option for the first question.";
+        option4.style.border = "solid black 2px";
+        startQuizBtn.innerHTML = "";
+        questionNumber = 0;
+        questionNumber++;
+        clearInterval(timeInterval);
+        quizTimer();
+    }
 }
 
 
@@ -94,10 +126,20 @@ function advanceQuestion() {
         questionNumber++;
     } else {
         question.textContent = "Congratulations, you finished!";
-        option1.innerHTML = "Your final score was: " + userScore;
+        var finalScore = userScore + timeLeft;
+        option1.innerHTML = "Your final score was: " + finalScore;
         option2.innerHTML = "Enter initials: ";
         option3.innerHTML = "";
         option4.innerHTML = "";
+        startQuizBtn.innerHTML = "Try Again";
+        option1.removeEventListener("click", advanceQuestion);
+        option2.removeEventListener("click", advanceQuestion);
+        option3.removeEventListener("click", advanceQuestion);
+        option4.removeEventListener("click", advanceQuestion);
+        option2.removeEventListener("click", answerisB);
+        option3.removeEventListener("click", answerisC);
+        option4.removeEventListener("click", answerisD);
+        option1.removeEventListener("click", answerisA);
     }
 }
 
