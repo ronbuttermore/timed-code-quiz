@@ -1,27 +1,56 @@
-var startQuiz = document.querySelector("#startbutton");
+var startQuizBtn = document.querySelector("#startbutton");
 var question = document.querySelector("#question");
 var option1 = document.querySelector("#option1");
 var option2 = document.querySelector("#option2");
 var option3 = document.querySelector("#option3");
 var option4 = document.querySelector("#option4");
 var feedback = document.querySelector("#feedback");
+var timeRemaining = document.querySelector("#timeRemaining");
 
 var questionNumber = 0;
+var userScore = 0;
+var timeLeft = 75;
 
-function setQuestion() {
-    if (questionNumber === 0) {
-        question.textContent = "Testing Question 1";
-        option1.innerHTML = "Here's the first option for the first question.";
-        option1.style.border = "solid black 2px";
-        option2.innerHTML = "Here's the second option for the first question.";
-        option2.style.border = "solid black 2px";
-        option3.innerHTML = "Here's the third option for the first question.";
-        option3.style.border = "solid black 2px";
-        option4.innerHTML = "Here's the fourth option for the first question.";
-        option4.style.border = "solid black 2px";
-        startQuiz.innerHTML = "Next Question";
-        questionNumber++;
-    } else if (questionNumber === 1) {
+function quizTimer () {
+    var timeInterval = setInterval(function () {
+        if (timeLeft > 1) {
+            timeRemaining.innerHTML = "Time: " + timeLeft;
+            timeLeft--;
+        } else {
+            timeRemaining.innerHTML = "Time's Up!"
+            clearInterval(timeInterval);
+            endQuiz();
+        }
+    }, 1000);
+}
+
+function endQuiz() {
+    question.textContent = "Sorry, you ran out of time! Try again";
+    option1.innerHTML = "Your final score was: " + userScore;
+    option2.innerHTML = "Enter initials: ";
+    option3.innerHTML = "";
+    option4.innerHTML = "";
+}
+
+function startQuiz() {
+    question.textContent = "Testing Question 1";
+    option1.innerHTML = "Here's the first option for the first question.";
+    option1.style.border = "solid black 2px";
+    option2.innerHTML = "Here's the second option for the first question.";
+    option2.style.border = "solid black 2px";
+    option3.innerHTML = "Here's the third option for the first question.";
+    option3.style.border = "solid black 2px";
+    option4.innerHTML = "Here's the fourth option for the first question.";
+    option4.style.border = "solid black 2px";
+    startQuiz.innerHTML = "Next Question";
+    questionNumber++;
+    quizTimer();
+}
+
+
+
+function advanceQuestion() {
+    if (questionNumber === 1) {
         question.textContent = "Testing Question 2";
         option1.innerHTML = "Here's the first option for the second question.";
         option2.innerHTML = "Here's the second option for the second question.";
@@ -65,43 +94,57 @@ function setQuestion() {
         questionNumber++;
     } else {
         question.textContent = "Congratulations, you finished!";
-        option1.innerHTML = "Your final score was: ";
+        option1.innerHTML = "Your final score was: " + userScore;
         option2.innerHTML = "Enter initials: ";
         option3.innerHTML = "";
         option4.innerHTML = "";
     }
 }
 
-startQuiz.addEventListener("click", setQuestion);
+startQuizBtn.addEventListener("click", startQuiz);
 
-option1.addEventListener("click", function(){
-    if (questionNumber === 1 || questionNumber === 5){
-        feedback.innerHTML = "Correct!";
+function answerisB() {
+    if (questionNumber == 1) {
+        feedback.innerHTML = "Correct! 10 points!";
+        userScore = userScore + 10;
     } else {
-        feedback.innerHTML = "Incorrect!";
+        feedback.innerHTML = "Incorrect! Sorry, 0 points!";
     }
-});
+}
 
-option2.addEventListener("click", function(){
-    if (questionNumber === 2 || questionNumber === 6) {
-        feedback.innerHTML = "Correct!";
+function answerisC() {
+    if (questionNumber == 2) {
+        feedback.innerHTML = "Correct! 10 points!";
+        userScore = userScore + 10;
     } else {
-        feedback.innerHTML = "Incorrect!";
+        feedback.innerHTML = "Incorrect! Sorry, 0 points!";
     }
-});
+}
 
-option3.addEventListener("click", function(){
-    if (questionNumber === 3 || questionNumber === 7) {
-        feedback.innerHTML = "Correct!";
+function answerisD() {
+    if (questionNumber == 3 || questionNumber == 4 || questionNumber == 6 || questionNumber == 7) {
+        feedback.innerHTML = "Correct! 10 points!";
+        userScore = userScore + 10;
     } else {
-        feedback.innerHTML = "Incorrect!";
+        feedback.innerHTML = "Incorrect! Sorry, 0 points!";
     }
-});
+}
 
-option4.addEventListener("click", function(){
-    if (questionNumber === 4 || questionNumber === 8) {
-        feedback.innerHTML = "Correct!";
+function answerisA() {
+    if (questionNumber == 5) {
+        feedback.innerHTML = "Correct! 10 points!";
+        userScore = userScore + 10;
     } else {
-        feedback.innerHTML = "Incorrect!";
+        feedback.innerHTML = "Incorrect! Sorry, 0 points!";
     }
-});
+}
+
+option2.addEventListener("click", answerisB);
+option3.addEventListener("click", answerisC);
+option4.addEventListener("click", answerisD);
+option1.addEventListener("click", answerisA);
+
+option1.addEventListener("click", advanceQuestion);
+option2.addEventListener("click", advanceQuestion);
+option3.addEventListener("click", advanceQuestion);
+option4.addEventListener("click", advanceQuestion);
