@@ -61,14 +61,14 @@ function startQuiz() {
     option2.addEventListener("click", advanceQuestion);
     option3.addEventListener("click", advanceQuestion);
     option4.addEventListener("click", advanceQuestion);
-    question.textContent = "Testing Question 1";
-    option1.innerHTML = "Here's the first option for the first question.";
+    question.textContent = "What language is used to add interactivity to webpages?";
+    option1.innerHTML = "Python";
     option1.style.border = "solid black 2px";
-    option2.innerHTML = "Here's the second option for the first question.";
+    option2.innerHTML = "JavaScript";
     option2.style.border = "solid black 2px";
-    option3.innerHTML = "Here's the third option for the first question.";
+    option3.innerHTML = "CSS";
     option3.style.border = "solid black 2px";
-    option4.innerHTML = "Here's the fourth option for the first question.";
+    option4.innerHTML = "Java";
     option4.style.border = "solid black 2px";
     startQuizBtn.innerHTML = "";
     questionNumber++;
@@ -86,14 +86,14 @@ function startQuiz() {
         option1.addEventListener("click", answerisA);
         userScore = 0;
         timeLeft = 75;
-        question.textContent = "Testing Question 1";
-        option1.innerHTML = "Here's the first option for the first question.";
+        question.textContent = "What language is used to add interactivity to webpages?";
+        option1.innerHTML = "Python";
         option1.style.border = "solid black 2px";
-        option2.innerHTML = "Here's the second option for the first question.";
+        option2.innerHTML = "JavaScript";
         option2.style.border = "solid black 2px";
-        option3.innerHTML = "Here's the third option for the first question.";
+        option3.innerHTML = "CSS";
         option3.style.border = "solid black 2px";
-        option4.innerHTML = "Here's the fourth option for the first question.";
+        option4.innerHTML = "Java";
         option4.style.border = "solid black 2px";
         startQuizBtn.innerHTML = "";
         questionNumber++;
@@ -105,46 +105,46 @@ function startQuiz() {
 
 function advanceQuestion() {
     if (questionNumber === 1) {
-        question.textContent = "Testing Question 2";
-        option1.innerHTML = "Here's the first option for the second question.";
-        option2.innerHTML = "Here's the second option for the second question.";
-        option3.innerHTML = "Here's the third option for the second question.";
-        option4.innerHTML = "Here's the fourth option for the second question.";
+        question.textContent = "JavaScript variables can be passed into ____";
+        option1.innerHTML = "CSS";
+        option2.innerHTML = "HTML Elements";
+        option3.innerHTML = "JavaScript Functions";
+        option4.innerHTML = "JavaScript variables cannot be passed into anything.";
         questionNumber++;
     } else if (questionNumber === 2) {
-        question.textContent = "Testing Question 3";
-        option1.innerHTML = "Here's the first option for the third question.";
-        option2.innerHTML = "Here's the second option for the third question.";
-        option3.innerHTML = "Here's the third option for the third question.";
-        option4.innerHTML = "Here's the fourth option for the third question.";
+        question.textContent = "Conditional logic arguments in if/else statements are enclosed in what?";
+        option1.innerHTML = "HTML Tags";
+        option2.innerHTML = "Brackets";
+        option3.innerHTML = "Quotation Marks";
+        option4.innerHTML = "Parentheses";
         questionNumber++;
     } else if (questionNumber === 3) {
-        question.textContent = "Testing Question 4";
-        option1.innerHTML = "Here's the first option for the fourth question.";
-        option2.innerHTML = "Here's the second option for the fourth question.";
-        option3.innerHTML = "Here's the third option for the fourth question.";
-        option4.innerHTML = "Here's the fourth option for the fourth question.";
+        question.textContent = "Loops in JavaScript are used to do what?";
+        option1.innerHTML = "Loops cannot be used in JavaScript";
+        option2.innerHTML = "Pass variables into functions";
+        option3.innerHTML = "Execute commands based on conditional logic";
+        option4.innerHTML = "Iterate commands based on specified parameters";
         questionNumber++;
     } else if (questionNumber === 4) {
-        question.textContent = "Testing Question 5";
-        option1.innerHTML = "Here's the first option for the fifth question.";
-        option2.innerHTML = "Here's the second option for the fifth question.";
-        option3.innerHTML = "Here's the third option for the fifth question.";
-        option4.innerHTML = "Here's the fourth option for the fifth question.";
+        question.textContent = "If/Else statements can be used to execute commands in JavaScript based on what?";
+        option1.innerHTML = "Conditional Logic";
+        option2.innerHTML = "Functions";
+        option3.innerHTML = "Objects";
+        option4.innerHTML = "Iteration";
         questionNumber++;
     } else if (questionNumber === 5) {
-        question.textContent = "Testing Question 6";
-        option1.innerHTML = "Here's the first option for the sixth question.";
-        option2.innerHTML = "Here's the second option for the sixth question.";
-        option3.innerHTML = "Here's the third option for the sixth question.";
-        option4.innerHTML = "Here's the fourth option for the second question.";
+        question.textContent = "Which of the following is an example of a third-party API";
+        option1.innerHTML = "Cascading Style Sheets";
+        option2.innerHTML = "Document Object Model";
+        option3.innerHTML = "Objects";
+        option4.innerHTML = "Bootsrap";
         questionNumber++;
     } else if (questionNumber === 6) {
-        question.textContent = "Testing Question 7";
-        option1.innerHTML = "Here's the first option for the seventh question.";
-        option2.innerHTML = "Here's the second option for the seventh question.";
-        option3.innerHTML = "Here's the third option for the seventh question.";
-        option4.innerHTML = "Here's the fourth option for the seventh question.";
+        question.textContent = "Which of the following is NOT a data type in JavaScript";
+        option1.innerHTML = "Boolean";
+        option2.innerHTML = "Number";
+        option3.innerHTML = "String";
+        option4.innerHTML = "Array";
         questionNumber++;
     } else {
         question.textContent = "Congratulations, you finished!";
