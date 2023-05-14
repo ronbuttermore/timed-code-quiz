@@ -4,7 +4,7 @@
 This webpage was built for people learning code to test their knowledge of different coding concepts with a seven-question, timed quiz. Users can take the quiz and answer seven questions about JavaScript while being timed. At the end of the quiz, the user will be given a score, and will have the ability to see high scores for the quiz that are stored on their local browser storage. I built this webpage to practice JavaScript and the DOM API, and hopefully provide a fun resource for other students to use.
 
 ## Usage
-Users can find this webpage on GitHub pages at https://ronbuttermore.github.io/timed-coding-quiz
+Users can find this webpage on GitHub pages at [https://ronbuttermore.github.io/timed-coding-quiz](https://ronbuttermore.github.io/timed-code-quiz/)
 
 Users may click on the "Start Quiz" button to being the quiz. Clicking the correct answer for each question will add 10 points to the user's score, while clicking on the incorrect answer will take 10 seconds away from the user's time. The user can click "View High Scores"  the top of the page to view a list of previous scores stored on the local browser storage. If the timer is reduced to 0 before the user answers all of the questions, the quiz will end. At the conclusion of the quiz, the user can enter their initials to have their score saved to local browser storage.
 
